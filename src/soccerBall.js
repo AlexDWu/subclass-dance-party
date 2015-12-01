@@ -9,7 +9,16 @@ SoccerBall.prototype.constructor = SoccerBall;
 
 SoccerBall.prototype.step = function(){
   Dancer.prototype.step.call(this);
-  this.$node.animate({
-    "transform": "translate(100px) rotate(20deg)",
-  }, this.timeBetweenSteps, "linear");
+  this.$node.rotate({angle: 0, animateTo:360});
+/*
+  $("#img").rotate({bind:{
+  click: function(){
+    $(this).rotate({
+      angle: 0,
+      animateTo:180
+      })
+    }
+  }
+  });
+  */
 }
