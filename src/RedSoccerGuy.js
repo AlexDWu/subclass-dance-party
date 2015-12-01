@@ -7,50 +7,29 @@ var RedSoccerGuy = function(top, left, timeBetweenSteps){
   this.$node = $('<img class="soccerguy dancer" src="assets/soccerGuyRed.png"/>');
   this.setPosition(top,left);
   this.goingRight = false;
+  this.walkingDistance = $("body").width() * 0.95;
 };
 RedSoccerGuy.prototype = Object.create(Dancer.prototype);
 RedSoccerGuy.prototype.constructor = RedSoccerGuy;
 
 RedSoccerGuy.prototype.step = function() {
-
-  if (this instanceof Referee) {
-    console.log('here');
-    var walkingDistance = $("body").width() / 2.25;
-  } else {
-    var walkingDistance = $("body").width();
-  }
-
   Dancer.prototype.step.call(this);
   var position = this.$node.position();
   var ballPosition = window.ball.$node.position();
  
   if ((position.top < (ballPosition.top + 60)) && ((position.top + 110) > (ballPosition.top)) &&
     (position.left < (ballPosition.left + 60)) && ((position.left + 110) > (ballPosition.left))) {
-    console.log('left workweds');
+    // console.log('left workweds');
     window.ball.randomMovement();
   }
 
-  if(position.left > walkingDistance){
+  if(position.left >= this.walkingDistance - 70){
     this.goingRight = false;
-    this.$node.css({
-        "-moz-transform": "scaleX(-1)",
-        "-o-transform": "scaleX(-1)",
-        "-webkit-transform": "scaleX(-1)",
-        "transform": "scaleX(-1)",
-        "filter": "FlipH",
-        "-ms-filter": "FlipH",
-      });
+    this.$node.removeClass("flip");
   }
   if(position.left < 0){
     this.goingRight = true;
-    this.$node.css({
-        "-moz-transform": "scaleX(-1)",
-        "-o-transform": "scaleX(-1)",
-        "-webkit-transform": "scaleX(-1)",
-        "transform": "scaleX(-1)",
-        "filter": "FlipH",
-        "-ms-filter": "FlipH",
-      });
+    this.$node.addClass("flip");
   }
   if(this.goingRight){
     this.$node.animate({

@@ -3,6 +3,11 @@ $(document).ready(function() {
   window.myTime = 100;
   window.ball = new SoccerBall(($("body").height())/2.1, ($("body").width())/2.05, myTime);
   $('body').append(window.ball.$node);
+  window.redScore = 0;
+  $('.redTeamScore').text(window.redScore);
+  window.blueScore = 0;
+  $('.blueTeamScore').text(window.blueScore);
+
 
     $(".addDancerButton").on("click", function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -37,12 +42,38 @@ $(document).ready(function() {
   $(".lineUpButton").on("click", function(event){
     // make the dancers line up
     
-    var leftDistance = 10;
-    for(var i = 0; i < dancers.length; i++){
-      console.log(dancers[i]);      
-      dancers[i].setPosition(400, leftDistance)
-      leftDistance = leftDistance + 80;
+    if( $(this).hasClass("notLinedUp")){
+      var leftDistance = 10;
+      for(var i = 0; i < dancers.length; i++){
+        dancers[i].lineUp(400, leftDistance);
+        leftDistance = leftDistance + 80;
+      }
+      // change class and text to not lineUp button
+      $(this).addClass("linedUp");
+      $(this).removeClass("notLinedUp");
+      $(this).text("End Line Up!");
+    } else {
+      for(var i = 0; i < dancers.length; i++){
+        dancers[i].endLineUp();
+      }
+      $(this).addClass("notLinedUp");
+      $(this).removeClass("linedUp");
+      $(this).text("Line Up!")
     }
+  });
+  $('.leftGoal').css({
+    "top" : ($('body').height())/2.18,
+    "left": 0,
+    "width": "400px",
+    "height": "400px",
+    "position" : "absolute"
+  });
+  $('.rightGoal').css({
+    "top" : ($('body').height())/2.18,
+    "left": ($('body').width() - 80),
+    "width": "80px",
+    "height": "400px",
+    "position" : "absolute"
   });
 });
 

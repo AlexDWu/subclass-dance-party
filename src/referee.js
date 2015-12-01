@@ -2,7 +2,8 @@ var Referee = function(top, left, timeBetweenSteps) {
   RedSoccerGuy.call(this, top, left, timeBetweenSteps );
 
   this.$node = $('<img class="referee dancer" src="assets/referee.png"/>');
-  this.setPosition(30,50);  
+  this.setPosition(10,50);  
+  this.walkingDistance = $("body").width() / 2.25;
 }
 
 Referee.prototype = Object.create(RedSoccerGuy.prototype);
