@@ -2,6 +2,7 @@
 
 var RedSoccerGuy = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.hasBall = false;
   
   this.$node = $('<img class="soccerguy dancer" src="assets/soccerGuyRed.png"/>');
   this.setPosition(top,left);
@@ -13,7 +14,6 @@ RedSoccerGuy.prototype.constructor = RedSoccerGuy;
 RedSoccerGuy.prototype.step = function() {
   Dancer.prototype.step.call(this);
   var position = this.$node.position();
-  console.log(this.$node.position().top);
 
   if(position.left > $("body").width()){
     this.goingRight = false;
