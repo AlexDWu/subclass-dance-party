@@ -28,6 +28,20 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    dancers.push(dancer);
+  });
+
+  $(".lineUpButton").on("click", function(event){
+    // make the dancers line up
+    var body = $("body");
+    var width = body.width;
+    var height = body.height;
+    var leftDistance = 10;
+    for(var i = 0; i < dancers.length; i++){
+      console.log(dancers[i]);      
+      dancers[i].setPosition(400, leftDistance)
+      leftDistance = leftDistance + 20;
+    }
   });
 });
 
