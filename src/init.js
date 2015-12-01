@@ -62,17 +62,19 @@ $(document).ready(function() {
     }
   });
   $('.leftGoal').css({
-    "top" : ($('body').height())/2.18,
+    "border": "2px solid red",
+    "top" : ($('body').height())/3.2,
     "left": 0,
-    "width": "400px",
-    "height": "400px",
+    "width": "100px",
+    "height": "220px",
     "position" : "absolute"
   });
   $('.rightGoal').css({
-    "top" : ($('body').height())/2.18,
-    "left": ($('body').width() - 80),
-    "width": "80px",
-    "height": "400px",
+    "border": "2px solid red",
+    "top" : ($('body').height())/3.2,
+    "left": ($('body').width() - 100),
+    "width": "100px",
+    "height": "220px",
     "position" : "absolute"
   });
 });

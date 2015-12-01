@@ -51,6 +51,7 @@ SoccerBall.prototype.randomMovement = function() {
           randomW > leftGoal.left && randomW < leftGoal.right){
           window.redScore++;
           $(".redTeamScore").text(window.redScore);
+          $(".topbar").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
         }
         var $rightGoal = $(".rightGoal");
         var rightGoal = {
@@ -63,6 +64,7 @@ SoccerBall.prototype.randomMovement = function() {
           randomW > rightGoal.left && randomW < rightGoal.right){
           window.blueScore++;
           $(".blueTeamScore").text(window.blueScore);
+          $(".topbar").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
         }
       },
     });
