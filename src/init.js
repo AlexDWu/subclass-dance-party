@@ -1,7 +1,10 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.myTime = 100;
+  window.ball = new SoccerBall(($("body").height())/2.1, ($("body").width())/2.05, myTime);
+  $('body').append(window.ball.$node);
 
-  $(".addDancerButton").on("click", function(event) {
+    $(".addDancerButton").on("click", function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
@@ -25,7 +28,7 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 1000
+      myTime
     );
     $('body').append(dancer.$node);
     dancers.push(dancer);
@@ -33,9 +36,7 @@ $(document).ready(function() {
 
   $(".lineUpButton").on("click", function(event){
     // make the dancers line up
-    var body = $("body");
-    var width = body.width;
-    var height = body.height;
+    
     var leftDistance = 10;
     for(var i = 0; i < dancers.length; i++){
       console.log(dancers[i]);      

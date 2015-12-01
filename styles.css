@@ -36,12 +36,18 @@ body, a:link, a:visited, a:active{
 .soccerguy{
   border:0px;
   border-radius:0px;
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
 }
 .soccerBall{
   border: 0px;
   border-radius: 0px;
   width:40px;
   height:40px;
+}
+.referee {
+   border: 0px;
+  border-radius: 0px;
+  width:30px;
+  height:60px;
 }
