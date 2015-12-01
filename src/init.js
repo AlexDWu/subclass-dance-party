@@ -40,7 +40,7 @@ $(document).ready(function() {
     for(var i = 0; i < dancers.length; i++){
       console.log(dancers[i]);      
       dancers[i].setPosition(400, leftDistance)
-      leftDistance = leftDistance + 20;
+      leftDistance = leftDistance + 80;
     }
   });
 });
