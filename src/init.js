@@ -7,6 +7,7 @@ $(document).ready(function() {
   $('.redTeamScore').text(window.redScore);
   window.blueScore = 0;
   $('.blueTeamScore').text(window.blueScore);
+  //$('audio').toggle();
 
 
     $(".addDancerButton").on("click", function(event) {

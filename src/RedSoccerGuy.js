@@ -4,7 +4,7 @@ var RedSoccerGuy = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
   this.hasBall = false;
   
-  this.$node = $('<img class="soccerguy dancer" src="assets/soccerGuyRed.png"/>');
+  this.$node = $('<img style="position:absolute" class="soccerguy dancer" src="assets/soccerGuyRed.png"/>');
   this.setPosition(top,left);
   this.goingRight = false;
   this.walkingDistance = $("body").width() * 0.95;

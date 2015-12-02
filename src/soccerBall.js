@@ -38,6 +38,8 @@ SoccerBall.prototype.randomMovement = function() {
       duration: 1000, 
       easing: "linear",
       complete: function(){
+        // var $audio = $('<audio src="assets/stadium.mp3" controls autoplay volume="0">' + 
+        //   'Your browser does not support the <code>audio</code> element.</audio>');
         //check if ball is in the goal
         // get left goal dimentions and postion
         var $leftGoal = $(".leftGoal");
@@ -52,6 +54,8 @@ SoccerBall.prototype.randomMovement = function() {
           window.redScore++;
           $(".redTeamScore").text(window.redScore);
           $(".topbar").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+          // $('body').append($audio);
+          // setTimeout(function(){return $audio.remove();}, 500);
         }
         var $rightGoal = $(".rightGoal");
         var rightGoal = {

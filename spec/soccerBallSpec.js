@@ -8,10 +8,11 @@ describe("SoccerBall", function() {
     clock = sinon.useFakeTimers();
     soccerBallr = new SoccerBall(10, 20, timeBetweenSteps);
   });
-  it("should pass on a mouse over"){
-    sinon.spy()
-    sinon.spy(soccerBall.$node, )
-  }
+
+  // it("should pass on a mouse over", function(){
+  //   sinon.spy()
+  //   sinon.spy(soccerBall.$node, "");
+  // });
 /*
   it("should have a jQuery $node object", function() {
     expect(soccerBall.$node).to.be.an.instanceof(jQuery);
@@ -37,6 +38,6 @@ describe("SoccerBall", function() {
       clock.tick(timeBetweenSteps);
       expect(soccerBall.step.callCount).to.be.equal(2);
     });
-*/
-  });
+
+  });*/
 });
